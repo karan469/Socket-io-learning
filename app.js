@@ -27,7 +27,7 @@ io.on("connection", socket => {
 const getApiAndEmit = async socket => {
   try {
     const res = await axios.get(
-      "https://api.darksky.net/forecast/ac2bb2c0f48e4fe48c28a446a1789b5e/37.8267,-122.4233"
+      "https://api.darksky.net/forecast/API_Key_Here/37.8267,-122.4233"
     ); // Getting the data from DarkSky
     socket.emit("FromAPI", res.data.currently.temperature); // Emitting a new message. It will be consumed by the client
   } catch (error) {
